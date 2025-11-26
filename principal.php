@@ -274,7 +274,7 @@
     <div class="banner-text">
         <h2>Sua noite começa aqui</h2>
         <p>Drinks exclusivos, ambiente aconchegante e experiências únicas.</p>
-        <a href="https://www.canva.com/design/DAGL6NAY8SQ/-68J24QOyltwWmnawULcTA/view?utm_content=DAGL6NAY8SQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h61da0a3c28&utm_id=1344207247310791_v2_s01_e100" 
+        <a href="https://www.canva.com/design/DAGL6NAY8SQ/-68J24QOyltwWmnawULcTA/view?utm_content=DAGL6NAY8SQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h61da0a3c28&utm_id=1344207247310791_v2_s01_e100"  
         class="btn">Ver cardápio</a>
     </div>
 </section>
@@ -289,20 +289,41 @@
 
 <!-- FAVORITOS -->
 <section>
-    <h2>Nossos Favoritos</h2>
+    <h2>Temos</h2>
 
     <div class="carrossel-container">
         <button class="seta esquerda" onclick="scrollCarrossel(-300)">&#10094;</button>
         <button class="seta direita" onclick="scrollCarrossel(300)">&#10095;</button>
 
-        <div class="carrossel" id="carrossel">
-            <div class="card" style="background-image:url('img/logogastrobar.jpg');"><h3>Hambúrgueres</h3></div>
-            <div class="card" style="background-image:url('pizza.jpg');"><h3>Pizza</h3></div>
-            <div class="card" style="background-image:url('pratos.jpg');"><h3>Pratos</h3></div>
-            <div class="card" style="background-image:url('drinks.jpg');"><h3>Drinks</h3></div>
-            <div class="card" style="background-image:url('cerveja.jpg');"><h3>Cerveja</h3></div>
-        </div>
-    </div>
+       <div class="carrossel" id="carrossel">
+
+    <a href="hamburguer.php" class="card" 
+       style="background-image:url('https://manualdohomemmoderno.com.br/files/2020/05/como-fazer-o-melhor-hamburguer-caseiro-como-escolher-as-carnes-e-2-receitas-simples-e-praticas-como-fazer-o-melhor-hamburguer-caseiro-como-escolher-as-carnes-e-2-receitas-simples-e-praticas-4.jpg');">
+        <h3>Hambúrgueres</h3>
+    </a>
+
+    <a href="pizzas.php" class="card" 
+       style="background-image:url('https://swiftbr.vteximg.com.br/arquivos/ids/207860-1500-1000/618296-pizza-artesanal-de-pepperon_rec.jpg?v=638851846024500000');">
+        <h3>Pizza</h3>
+    </a>
+
+    <a href="petiscos.php" class="card" 
+       style="background-image:url('https://www.receiteria.com.br/wp-content/uploads/receitas-de-petiscos-para-festa-1.jpg');">
+        <h3>Petiscos</h3>
+    </a>
+
+    <a href="bebidas.php" class="card" 
+       style="background-image:url('https://rezenha.ze.delivery/wp-content/uploads/2025/02/drinks-com-energetico.webp');">
+        <h3>Drinks</h3>
+    </a>
+
+    <a href="cerveja.php" class="card" 
+       style="background-image:url('cerveja.jpg');">
+        <h3>Cerveja</h3>
+    </a>
+
+</div>
+    </div> 
 </section>
 
 <!-- FOTOS -->
