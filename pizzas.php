@@ -19,6 +19,23 @@
         padding: 40px 0 10px;
     }
 
+    .btn-voltar {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: #ffb300;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-voltar:hover {
+    background: #ffcc46;
+}
+
+
     header h1 {
         font-size: 48px;
         letter-spacing: 3px;
@@ -96,6 +113,9 @@
 <header>
     <h1>PIZZAS</h1>
 </header>
+
+<a href="javascript:history.back()" class="btn-voltar">← Voltar</a>
+
 
 <!-- SALGADAS -->
 <section class="categoria">
