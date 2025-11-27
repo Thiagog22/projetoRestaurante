@@ -318,7 +318,7 @@
     </a>
 
     <a href="cerveja.php" class="card" 
-       style="background-image:url('cerveja.jpg');">
+       style="background-image:url('https://arquivoscloud.blob.core.windows.net/pontobrweb/7fe39c89-9cef-4154-bef8-17e266a6d8d5.PNG');">
         <h3>Cerveja</h3>
     </a>
 
@@ -447,3 +447,4 @@ animateParticles();
 
 </body>
 </html>
+
