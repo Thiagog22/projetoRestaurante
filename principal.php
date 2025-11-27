@@ -335,11 +335,11 @@
         <button class="foto-arrow foto-left" onclick="scrollFotos(-300)">&#10094;</button>
 
         <div class="fotos-carousel" id="carousel-fotos">
-            <div class="foto-card" style="background-image:url('foto1.jpg');"></div>
-            <div class="foto-card" style="background-image:url('foto2.jpg');"></div>
-            <div class="foto-card" style="background-image:url('foto3.jpg');"></div>
-            <div class="foto-card" style="background-image:url('foto4.jpg');"></div>
-            <div class="foto-card" style="background-image:url('foto5.jpg');"></div>
+            <div class="foto-card" style="background-image:url('img/frente.jpg');"></div>
+            <div class="foto-card" style="background-image:url('img/letreiro.jpg');"></div>
+            <div class="foto-card" style="background-image:url('img/bar.jpg');"></div>
+            <div class="foto-card" style="background-image:url('img/frente2.jpg');"></div>
+            <div class="foto-card" style="background-image:url('img/letreiro2.jpg');"></div>
         </div>
 
         <button class="foto-arrow foto-right" onclick="scrollFotos(300)">&#10095;</button>
