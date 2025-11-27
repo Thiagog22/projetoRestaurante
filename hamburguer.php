@@ -18,11 +18,26 @@
         text-align: center;
         padding: 40px 0 10px;
     }
-
     header h1 {
         font-size: 48px;
         letter-spacing: 3px;
     }
+    .btn-voltar {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: #ffb300;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-voltar:hover {
+    background: #ffcc46;
+}
+
 
     .categoria {
         width: 90%;
@@ -101,6 +116,9 @@
 <!-- INDIVIDUAIS -->
 <section class="categoria">
     <h2>Individuais</h2>
+    <a href="javascript:history.back()" class="btn-voltar">← Voltar</a>
+
+
 
     <div class="item">
         <div class="nome">Smash Muçarela</div>
@@ -340,4 +358,4 @@ function enviarWhatsApp() {
 </script>
 
 </body>
-</html>
+</html>s
