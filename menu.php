@@ -67,7 +67,6 @@ echo '
     <nav class="menu">
         <ul>
             <li><a href="?pg=principal">Home</a></li>
-            <li><a href="?pg=fazerpedido">Faça seu pedido</a></li>
             <li><a href="?pg=quemsomos">Quem somos</a></li>
             <li><a href="?pg=servicos">Serviços</a></li>
 
@@ -77,3 +76,4 @@ echo '
 
 ';
 ?>
+
