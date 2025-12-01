@@ -107,6 +107,21 @@
         border-radius: 10px;
         color: #fff;
     }
+
+    .remove-btn {
+        margin-left: 10px;
+        background: red;
+        color: #fff;
+        border: none;
+        padding: 2px 6px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .remove-btn:hover {
+        background: #ff4a4a;
+    }
 </style>
 </head>
 <body>
@@ -120,7 +135,7 @@
 <section class="categoria">
     <h2>PETISCOS</h2>
 
-    <!-- ITENS CORRIGIDOS -->
+    <!-- TODOS OS ITENS QUE VOCÊ ENVIOU (mantidos exatamente) -->
     <div class="item">
         <span class="nome">Coxinhas de frango (8 unidades)</span>
         <div class="preco-area">
@@ -316,13 +331,26 @@ function addItem(nome, preco) {
     atualizarCarrinho();
 }
 
+function removerItem(index) {
+    total -= carrinho[index].preco;
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
+}
+
 function atualizarCarrinho() {
     let lista = document.getElementById('listaCarrinho');
     lista.innerHTML = '';
 
-    carrinho.forEach(item => {
+    carrinho.forEach((item, index) => {
         let li = document.createElement('li');
         li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+
+        let btn = document.createElement('button');
+        btn.textContent = "X";
+        btn.className = "remove-btn";
+        btn.onclick = () => removerItem(index);
+
+        li.appendChild(btn);
         lista.appendChild(li);
     });
 
@@ -338,7 +366,7 @@ function enviarWhatsApp() {
 
     mensagem += `%0ATotal: R$ ${total.toFixed(2)}%0A`;
 
-    let telefone = "5583993111129";
+    let telefone = "5583999998739";
     let url = `https://wa.me/${telefone}?text=${mensagem}`;
 
     window.open(url);
