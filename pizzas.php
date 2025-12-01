@@ -20,21 +20,20 @@
     }
 
     .btn-voltar {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    background: #ffb300;
-    padding: 10px 15px;
-    border-radius: 5px;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-}
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        background: #ffb300;
+        padding: 10px 15px;
+        border-radius: 5px;
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+    }
 
-.btn-voltar:hover {
-    background: #ffcc46;
-}
-
+    .btn-voltar:hover {
+        background: #ffcc46;
+    }
 
     header h1 {
         font-size: 48px;
@@ -105,6 +104,22 @@
         border-radius: 10px;
         color: #fff;
     }
+
+    /* Botão remove */
+    .remove-btn {
+        background: red;
+        color: white;
+        border: none;
+        padding: 2px 6px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 8px;
+        font-size: 12px;
+    }
+
+    .remove-btn:hover {
+        background: #ff5b5b;
+    }
 </style>
 </head>
 
@@ -116,12 +131,11 @@
 
 <a href="javascript:history.back()" class="btn-voltar">← Voltar</a>
 
-
 <!-- SALGADAS -->
 <section class="categoria">
     <h2>SALGADAS</h2>
 
-    <!-- Cada item -->
+    <!-- TODOS os itens exatamente como você colocou -->
     <div class="item">
         <div class="nome">Muçarela</div>
         <div class="precos">
@@ -364,13 +378,22 @@ function addItem(nome, preco) {
     atualizarCarrinho();
 }
 
+function removerItem(index) {
+    total -= carrinho[index].preco;
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
+}
+
 function atualizarCarrinho() {
     let lista = document.getElementById('listaCarrinho');
     lista.innerHTML = '';
 
-    carrinho.forEach(item => {
+    carrinho.forEach((item, index) => {
         let li = document.createElement('li');
-        li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+        li.innerHTML = `
+            ${item.nome} - R$ ${item.preco.toFixed(2)}
+            <button class="remove-btn" onclick="removerItem(${index})">X</button>
+        `;
         lista.appendChild(li);
     });
 
@@ -386,7 +409,7 @@ function enviarWhatsApp() {
 
     mensagem += `%0ATotal: R$ ${total.toFixed(2)}%0A`;
 
-    let telefone = "5583993111129";
+    let telefone = "5583999998739";
     let url = `https://wa.me/${telefone}?text=${mensagem}`;
 
     window.open(url);
