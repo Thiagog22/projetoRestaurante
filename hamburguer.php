@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -23,21 +23,20 @@
         letter-spacing: 3px;
     }
     .btn-voltar {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    background: #ffb300;
-    padding: 10px 15px;
-    border-radius: 5px;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-}
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        background: #ffb300;
+        padding: 10px 15px;
+        border-radius: 5px;
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+    }
 
-.btn-voltar:hover {
-    background: #ffcc46;
-}
-
+    .btn-voltar:hover {
+        background: #ffcc46;
+    }
 
     .categoria {
         width: 90%;
@@ -104,6 +103,16 @@
         border-radius: 10px;
         color: #fff;
     }
+
+    #listaCarrinho button {
+        background: red;
+        border: none;
+        color: #fff;
+        padding: 3px 7px;
+        margin-left: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 </style>
 </head>
 
@@ -117,8 +126,6 @@
 <section class="categoria">
     <h2>Individuais</h2>
     <a href="javascript:history.back()" class="btn-voltar">← Voltar</a>
-
-
 
     <div class="item">
         <div class="nome">Smash Muçarela</div>
@@ -328,13 +335,24 @@ function addItem(nome, preco) {
     atualizarCarrinho();
 }
 
+function removerItem(index) {
+    total -= carrinho[index].preco;
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
+}
+
 function atualizarCarrinho() {
     const lista = document.getElementById("listaCarrinho");
     lista.innerHTML = "";
 
-    carrinho.forEach(item => {
+    carrinho.forEach((item, index) => {
         const li = document.createElement("li");
-        li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+
+        li.innerHTML = `
+            ${item.nome} - R$ ${item.preco.toFixed(2)}
+            <button onclick="removerItem(${index})">X</button>
+        `;
+
         lista.appendChild(li);
     });
 
@@ -350,7 +368,7 @@ function enviarWhatsApp() {
 
     msg += `%0ATotal: R$ ${total.toFixed(2)}%0A`;
 
-    const telefone = "5583993111129";
+    const telefone = "5583999998739";
     const url = `https://wa.me/${telefone}?text=${msg}`;
 
     window.open(url);
@@ -358,4 +376,4 @@ function enviarWhatsApp() {
 </script>
 
 </body>
-</html>s
+</html>
