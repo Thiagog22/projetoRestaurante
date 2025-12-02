@@ -149,11 +149,9 @@ letter-spacing: 3px;
 
 <a href="javascript:history.back()" class="btn-voltar">< Voltar</a>
 
-<!-- SALGADAS -->
 <section class="categoria">
     <h2>SALGADAS</h2>
 
-    <!-- Cada item -->
     <div class="item">
         <div class="nome">Muçarela</div>
         <div class="precos">

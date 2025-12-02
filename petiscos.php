@@ -244,6 +244,8 @@ function removerItem(index) {
 }
 
 function enviarWhatsApp() {
+    salvarPedidoJSON(); // <-- salva no arquivo JSON
+
     const nome = document.getElementById("nomeCliente").value.trim();
     const endereco = document.getElementById("enderecoCliente").value.trim();
 
@@ -251,7 +253,7 @@ function enviarWhatsApp() {
         alert("Por favor, preencha seu nome e endereço antes de enviar o pedido.");
         return;
     }
-
+    
     let msg = " Olá, Gostaria de fazer um pedido: %0A%0A";
 
     msg += ` *Nome:* ${nome}%0A`;
@@ -264,10 +266,37 @@ function enviarWhatsApp() {
 
     msg += `%0A *Total:* R$ ${total.toFixed(2)}%0A`;
 
-    const telefone = "5583993111129";
+    const telefone = "5583999777515";
     const url = `https://wa.me/${telefone}?text=${msg}`;
 
     window.open(url);
+}
+
+function salvarPedidoJSON() {
+    const nome = document.getElementById("nomeCliente").value.trim();
+    const endereco = document.getElementById("enderecoCliente").value.trim();
+
+    if (!nome || !endereco) {
+        alert("Preencha seu nome e endereço.");
+        return;
+    }
+
+    const pedido = {
+        nome: nome,
+        endereco: endereco,
+        itens: carrinho,
+        total: total
+    };
+
+    fetch("salvarPedido.php", {
+        method: "POST",
+        body: JSON.stringify(pedido)
+    })
+    .then(res => res.json())
+    .then(res => {
+        console.log("Pedido salvo:", res);
+    })
+    .catch(err => console.error("Erro ao salvar:", err));
 }
 
 window.onload = function() {

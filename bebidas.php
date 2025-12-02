@@ -178,8 +178,6 @@ letter-spacing: 3px;
 </section>
 
 
-
-<!-- CACHAÇAS -->
 <section class="categoria">
     <h2>Cachaças</h2>
 
@@ -202,9 +200,6 @@ letter-spacing: 3px;
     <div class="item"><div class="nome">Serra Limpa</div><div class="linha-preco">R$ 29,99 <button class="add-btn" onclick="addItem('Serra Limpa', 29.99)">Adicionar</button></div></div>
 </section>
 
-
-
-<!-- DOSES -->
 <section class="categoria">
     <h2>Doses</h2>
 
@@ -242,8 +237,6 @@ letter-spacing: 3px;
 </section>
 
 
-
-<!-- GARRAFAS -->
 <section class="categoria">
     <h2>Garrafas</h2>
 
@@ -267,11 +260,6 @@ letter-spacing: 3px;
 </section>
 
 
-
-
-<!-- ============================= -->
-<!--        NÃO ALCOÓLICAS         -->
-<!-- ============================= -->
 
 <section class="categoria">
     <h2>Não Alcoólicas</h2>
@@ -315,106 +303,100 @@ letter-spacing: 3px;
 
 
 
-
-<!-- ============================= -->
-<!--             SUCOS             -->
-<!-- ============================= -->
-
 <section class="categoria">
     <h2>Sucos</h2>
 
-    <!-- AÇAÍ -->
+    
     <div class="item">
         <div class="nome">Açaí</div>
         <div class="linha-preco">Copo R$ 8,99 <button class="add-btn" onclick="addItem('Açaí (Copo)', 8.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 18,99 <button class="add-btn" onclick="addItem('Açaí (Jarra)', 18.99)">Adicionar</button></div>
     </div>
 
-    <!-- MORANGO C/ TANGERINA -->
     <div class="item">
         <div class="nome">Morango com Tangerina</div>
         <div class="linha-preco">Copo R$ 8,99 <button class="add-btn" onclick="addItem('Morango com Tangerina (Copo)', 8.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 18,99 <button class="add-btn" onclick="addItem('Morango com Tangerina (Jarra)', 18.99)">Adicionar</button></div>
     </div>
 
-    <!-- ABACAXI COM HORTELÃ -->
+
     <div class="item">
         <div class="nome">Abacaxi com Hortelã</div>
         <div class="linha-preco">Copo R$ 8,99 <button class="add-btn" onclick="addItem('Abacaxi com Hortelã (Copo)', 8.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 18,99 <button class="add-btn" onclick="addItem('Abacaxi com Hortelã (Jarra)', 18.99)">Adicionar</button></div>
     </div>
 
-    <!-- LARANJA -->
+    
     <div class="item">
         <div class="nome">Laranja</div>
         <div class="linha-preco">Copo R$ 8,99 <button class="add-btn" onclick="addItem('Laranja (Copo)', 8.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 18,99 <button class="add-btn" onclick="addItem('Laranja (Jarra)', 18.99)">Adicionar</button></div>
     </div>
 
-    <!-- LIMÃO -->
+    
     <div class="item">
         <div class="nome">Limão</div>
         <div class="linha-preco">Copo R$ 8,99 <button class="add-btn" onclick="addItem('Limão (Copo)', 8.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 18,99 <button class="add-btn" onclick="addItem('Limão (Jarra)', 18.99)">Adicionar</button></div>
     </div>
 
-    <!-- MORANGO -->
+    
     <div class="item">
         <div class="nome">Morango</div>
         <div class="linha-preco">Copo R$ 8,99 <button class="add-btn" onclick="addItem('Morango (Copo)', 8.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 18,99 <button class="add-btn" onclick="addItem('Morango (Jarra)', 18.99)">Adicionar</button></div>
     </div>
 
-    <!-- CAJÁ -->
+    
     <div class="item">
         <div class="nome">Cajá</div>
         <div class="linha-preco">Copo R$ 8,99 <button class="add-btn" onclick="addItem('Cajá (Copo)', 8.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 18,99 <button class="add-btn" onclick="addItem('Cajá (Jarra)', 18.99)">Adicionar</button></div>
     </div>
 
-    <!-- GRAVIOLA -->
+    
     <div class="item">
         <div class="nome">Graviola</div>
         <div class="linha-preco">Copo R$ 8,99 <button class="add-btn" onclick="addItem('Graviola (Copo)', 8.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 18,99 <button class="add-btn" onclick="addItem('Graviola (Jarra)', 18.99)">Adicionar</button></div>
     </div>
 
-    <!-- MARACUJÁ -->
+    
     <div class="item">
         <div class="nome">Maracujá</div>
         <div class="linha-preco">Copo R$ 8,99 <button class="add-btn" onclick="addItem('Maracujá (Copo)', 8.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 18,99 <button class="add-btn" onclick="addItem('Maracujá (Jarra)', 18.99)">Adicionar</button></div>
     </div>
 
-    <!-- UVA -->
+    
     <div class="item">
         <div class="nome">Uva</div>
         <div class="linha-preco">Copo R$ 7,99 <button class="add-btn" onclick="addItem('Uva (Copo)', 7.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 16,99 <button class="add-btn" onclick="addItem('Uva (Jarra)', 16.99)">Adicionar</button></div>
     </div>
 
-    <!-- ACEROLA -->
+    
     <div class="item">
         <div class="nome">Acerola</div>
         <div class="linha-preco">Copo R$ 6,99 <button class="add-btn" onclick="addItem('Acerola (Copo)', 6.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 16,99 <button class="add-btn" onclick="addItem('Acerola (Jarra)', 16.99)">Adicionar</button></div>
     </div>
 
-    <!-- GOIABA -->
+    
     <div class="item">
         <div class="nome">Goiaba</div>
         <div class="linha-preco">Copo R$ 6,99 <button class="add-btn" onclick="addItem('Goiaba (Copo)', 6.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 16,99 <button class="add-btn" onclick="addItem('Goiaba (Jarra)', 16.99)">Adicionar</button></div>
     </div>
 
-    <!-- ABACAXI -->
+    <
     <div class="item">
         <div class="nome">Abacaxi</div>
         <div class="linha-preco">Copo R$ 6,99 <button class="add-btn" onclick="addItem('Abacaxi (Copo)', 6.99)">Adicionar</button></div>
         <div class="linha-preco">Jarra R$ 16,99 <button class="add-btn" onclick="addItem('Abacaxi (Jarra)', 16.99)">Adicionar</button></div>
     </div>
 
-    <!-- CAJU -->
+    
     <div class="item">
         <div class="nome">Caju</div>
         <div class="linha-preco">Copo R$ 6,99 <button class="add-btn" onclick="addItem('Caju (Copo)', 6.99)">Adicionar</button></div>
@@ -424,10 +406,6 @@ letter-spacing: 3px;
 </section>
 
 
-
-
-
-<!-- CARRINHO -->
 <div id="carrinho">
     <h3>Seu Pedido</h3>
 
@@ -447,8 +425,6 @@ letter-spacing: 3px;
         Enviar para WhatsApp
     </button>
 </div>
-
-
 
 
 <script>

@@ -1,0 +1,80 @@
+{
+    "pedidos": [
+        {
+            "nome": "kjfljej",
+            "endereco": "kejle",
+            "itens": [
+                {
+                    "nome": "Pastéis de queijo do reino (6 unidades)",
+                    "preco": 19.99
+                },
+                {
+                    "nome": "Pão de alho (unidade)",
+                    "preco": 4.99
+                }
+            ],
+            "total": 24.97999999999994,
+            "id": 1,
+            "data": "2025-12-02 23:52:41"
+        },
+        {
+            "nome": "Matheus",
+            "endereco": "roger",
+            "itens": [
+                {
+                    "nome": "Bolinhos de bacalhau (6 unidades)",
+                    "preco": 19.9
+                },
+                {
+                    "nome": "Pão de alho (unidade)",
+                    "preco": 4.99
+                }
+            ],
+            "total": 24.889999999999937,
+            "id": 2,
+            "data": "2025-12-02 23:58:17"
+        },
+        {
+            "nome": "matheu",
+            "endereco": "jp",
+            "itens": [
+                {
+                    "nome": "Pastéis de queijo do reino (6 unidades)",
+                    "preco": 19.99
+                },
+                {
+                    "nome": "Bolinhos de bacalhau (6 unidades)",
+                    "preco": 19.9
+                }
+            ],
+            "total": 39.88999999999994,
+            "id": 3,
+            "data": "2025-12-03 00:04:01"
+        },
+        {
+            "nome": "jkefnwjfiowe",
+            "endereco": "ew",
+            "itens": [],
+            "total": -6.039613253960852e-14,
+            "id": 4,
+            "data": "2025-12-03 00:08:07"
+        },
+        {
+            "nome": "Matheus lindo",
+            "endereco": "joao pessoa",
+            "itens": [
+                {
+                    "nome": "Pastéis de queijo do reino (6 unidades)",
+                    "preco": 19.99
+                },
+                {
+                    "nome": "Pão de alho (unidade)",
+                    "preco": 4.99
+                }
+            ],
+            "total": 24.979999999999933,
+            "id": 5,
+            "data": "2025-12-03 00:14:31"
+        }
+    ]
+}

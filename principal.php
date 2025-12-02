@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ANIMAÇÃO AO ABRIR */
+    
         body {
             opacity: 0;
             animation: fadeIn 1.2s ease-in-out forwards;
@@ -226,14 +226,12 @@
         .foto-left { left:-10px; }
         .foto-right { right:-10px; }
 
-        /* RODAPÉ */
         .rodape {
             padding: 20px;
             text-align:center;
             box-shadow: 0 -4px 14px rgba(230, 161, 0, 0.45);
         }
 
-        /* WHATSAPP FIXO */
         .whatsapp-float {
             position: fixed;
             right: 20px;
@@ -261,7 +259,6 @@
 </head>
 <body>
 
-<!-- PARTÍCULAS -->
 <canvas id="particles"></canvas>
 
 <header class="topo">
@@ -269,10 +266,8 @@
     <p>Drinks autorais • Gastronomia • Música</p>
 </header>
 
-<!-- BANNER -->
 </section>
 
-<!-- SOBRE -->
 <section class="sobre">
     <div class="glass">
         <h2>Bem-vindo ao After Gastrobar</h2>
@@ -280,7 +275,6 @@
     </div>
 </section>
 
-<!-- FAVORITOS -->
 <section>
     <h2>Faça seu pedido</h2>
 
@@ -296,7 +290,7 @@
     </a>
 
     <a href="pizzas.php" class="card" 
-       style="background-image:url('https://wallpapers.com/images/hd/pizza-pictures-bfwkt0ti6ej1wus4.jpg');">
+       style="background-image:url('https://recipes.net/wp-content/uploads/2024/03/what-is-the-difference-between-white-pizza-and-red-pizza-1709276871.jpg');">
         <h3>Pizza</h3>
     </a>
 
@@ -321,7 +315,7 @@
 
 <!-- FOTOS -->
 <section id="fotos">
-    <h2>Fotos</h2>
+    <h2>Nosso Espaço</h2>
 
     <div class="fotos-carousel-wrapper">
 

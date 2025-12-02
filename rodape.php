@@ -1,5 +1,4 @@
 <?php
-// rodape.php
 ?>
 <footer style="background:#111; color:#eee; padding:20px 0; margin-top:40px; text-align:center; font-family:'Poppins', Arial, sans-serif;">
     <div style="max-width:1200px; margin:auto; padding:0 20px;">
