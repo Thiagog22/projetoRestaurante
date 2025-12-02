@@ -4,7 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Cardápio - After Gastrobar</title>
-
 <style>
     body {
         background: #0f0f0f;
@@ -22,22 +21,6 @@
     header h1 {
         font-size: 48px;
         letter-spacing: 3px;
-    }
-
-    .btn-voltar {
-        position: absolute;
-        left: 20px;
-        top: 20px;
-        background: #ffb300;
-        padding: 10px 15px;
-        border-radius: 5px;
-        color: #000;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .btn-voltar:hover {
-        background: #ffcc46;
     }
 
     .categoria {
@@ -60,68 +43,111 @@
     .item {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         border-bottom: 1px solid #444;
         padding: 10px 0;
         font-size: 18px;
     }
 
-    .nome {
-        max-width: 65%;
+    .item span.nome {
+        max-width: 70%;
     }
 
-    .preco-area {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .preco {
+    .item span.preco {
         font-weight: bold;
-        white-space: nowrap;
-        text-align: right;
     }
+    .item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #444;
+    padding: 10px 0;
+}
+
+.item span.nome {
+    flex: 1; /* nome ocupa todo o espaço */
+}
+
+.item span.preco {
+    width: 120px;  /* largura fixa para alinhar todos */
+    text-align: right; /* alinha os valores */
+}
+
+.add-btn {
+    margin-left: 15px; /* separa o botão */
+}
 
     .add-btn {
-        background: #ffb300;
-        border: none;
-        padding: 6px 12px;
-        border-radius: 5px;
-        cursor: pointer;
-        color: #000;
-        font-weight: bold;
-    }
+    background: #ffb300;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+}
 
-    .add-btn:hover {
-        background: #ffcc46;
-    }
+.add-btn:hover {
+    background: #ffcc46;
+}
+#carrinho {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #222;
+    border: 1px solid #555;
+    padding: 15px;
+    width: 260px;
+    border-radius: 10px;
+    color: #fff;
+}
+.remover-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 2px 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 8px;
+    font-weight: bold;
+}
 
-    #carrinho {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        background: #222;
-        border: 1px solid #555;
-        padding: 15px;
-        width: 260px;
-        border-radius: 10px;
-        color: #fff;
-    }
+.remover-btn:hover {
+    background: darkred;
+}
 
-    .remove-btn {
-        margin-left: 10px;
-        background: red;
-        color: #fff;
-        border: none;
-        padding: 2px 6px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-    }
+    .btn-voltar {
 
-    .remove-btn:hover {
-        background: #ff4a4a;
-    }
+position: absolute;
+
+left: 20px;
+
+top: 20px;
+
+background: #ffb300;
+
+padding: 10px 15px;
+
+border-radius: 5px;
+
+color: #000;
+
+text-decoration: none;
+
+font-weight: bold;
+
+}
+
+.btn-voltar:hover {
+
+background: #ffcc46;
+
+header h1 {
+
+font-size: 48px;
+
+letter-spacing: 3px;
+}
+}
+
 </style>
 </head>
 <body>
@@ -130,195 +156,52 @@
     <h1>CARDÁPIO</h1>
 </header>
 
-<a href="javascript:history.back()" class="btn-voltar">← Voltar</a>
+<a href="javascript:history.back()" class="btn-voltar">< Voltar</a>
 
 <section class="categoria">
     <h2>PETISCOS</h2>
 
-    <!-- TODOS OS ITENS QUE VOCÊ ENVIOU (mantidos exatamente) -->
-    <div class="item">
-        <span class="nome">Coxinhas de frango (8 unidades)</span>
-        <div class="preco-area">
-            <span class="preco">R$ 11,99</span>
-            <button class="add-btn" onclick="addItem('Coxinhas de frango (8 unidades)', 11.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Pastéis de carne de sol (6 unidades)</span>
-        <div class="preco-area">
-            <span class="preco">R$ 19,99</span>
-            <button class="add-btn" onclick="addItem('Pastéis de carne de sol (6 unidades)', 19.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Pastéis de queijo do reino (6 unidades)</span>
-        <div class="preco-area">
-            <span class="preco">R$ 19,99</span>
-            <button class="add-btn" onclick="addItem('Pastéis de queijo do reino (6 unidades)', 19.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Bolinhos de bacalhau (6 unidades)</span>
-        <div class="preco-area">
-            <span class="preco">R$ 19,90</span>
-            <button class="add-btn" onclick="addItem('Bolinhos de bacalhau (6 unidades)', 19.90)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Pão de alho (unidade)</span>
-        <div class="preco-area">
-            <span class="preco">R$ 4,99</span>
-            <button class="add-btn" onclick="addItem('Pão de alho (unidade)', 4.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Frango à passarinho com molho especial</span>
-        <div class="preco-area">
-            <span class="preco">R$ 19,99</span>
-            <button class="add-btn" onclick="addItem('Frango à passarinho com molho especial', 19.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Torresmo com farofa</span>
-        <div class="preco-area">
-            <span class="preco">R$ 19,99</span>
-            <button class="add-btn" onclick="addItem('Torresmo com farofa', 19.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Tripa com farofa</span>
-        <div class="preco-area">
-            <span class="preco">R$ 19,99</span>
-            <button class="add-btn" onclick="addItem('Tripa com farofa', 19.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Camarão crocante com catupiry (6 unidades)</span>
-        <div class="preco-area">
-            <span class="preco">R$ 24,99</span>
-            <button class="add-btn" onclick="addItem('Camarão crocante com catupiry (6 unidades)', 24.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Queijo coalho na chapa</span>
-        <div class="preco-area">
-            <span class="preco">R$ 9,99</span>
-            <button class="add-btn" onclick="addItem('Queijo coalho na chapa', 9.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Cubinhos de queijo à milanesa com molho especial</span>
-        <div class="preco-area">
-            <span class="preco">R$ 17,99</span>
-            <button class="add-btn" onclick="addItem('Cubinhos de queijo à milanesa com molho especial', 17.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Macaxeira frita com molho especial</span>
-        <div class="preco-area">
-            <span class="preco">R$ 14,99</span>
-            <button class="add-btn" onclick="addItem('Macaxeira frita com molho especial', 14.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Batata frita</span>
-        <div class="preco-area">
-            <span class="preco">R$ 19,99</span>
-            <button class="add-btn" onclick="addItem('Batata frita', 19.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Batata frita com cheddar e queijo ralado</span>
-        <div class="preco-area">
-            <span class="preco">R$ 19,99</span>
-            <button class="add-btn" onclick="addItem('Batata frita com cheddar e queijo ralado', 19.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Batata frita com bacon, cheddar e queijo ralado</span>
-        <div class="preco-area">
-            <span class="preco">R$ 24,99</span>
-            <button class="add-btn" onclick="addItem('Batata frita com bacon e queijo ralado', 24.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Filé com fritas com cheddar e queijo ralado</span>
-        <div class="preco-area">
-            <span class="preco">R$ 29,99</span>
-            <button class="add-btn" onclick="addItem('Filé com fritas com cheddar e queijo ralado', 29.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Calabresa com fritas com molho especial e queijo ralado</span>
-        <div class="preco-area">
-            <span class="preco">R$ 24,99</span>
-            <button class="add-btn" onclick="addItem('Calabresa com fritas com molho especial e queijo ralado', 24.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Iscas de frango com fritas com cheddar e queijo ralado</span>
-        <div class="preco-area">
-            <span class="preco">R$ 27,99</span>
-            <button class="add-btn" onclick="addItem('Iscas de frango com fritas com cheddar e queijo ralado', 27.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Iscas de peixe com fritas com cheddar e queijo ralado</span>
-        <div class="preco-area">
-            <span class="preco">R$ 22,99</span>
-            <button class="add-btn" onclick="addItem('Iscas de peixe com fritas com cheddar e queijo ralado', 22.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Camarão com fritas ao alho e óleo e queijo ralado</span>
-        <div class="preco-area">
-            <span class="preco">R$ 29,99</span>
-            <button class="add-btn" onclick="addItem('Camarão com fritas ao alho e óleo e queijo ralado', 29.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Carré suíno com vinagrete, farofa e macaxeira cozida</span>
-        <div class="preco-area">
-            <span class="preco">R$ 24,99</span>
-            <button class="add-btn" onclick="addItem('Carré suíno com vinagrete, farofa e macaxeira cozida', 24.99)">Adicionar</button>
-        </div>
-    </div>
-
-    <div class="item">
-        <span class="nome">Bisteca bovina com vinagrete, farofa e macaxeira cozida</span>
-        <div class="preco-area">
-            <span class="preco">R$ 29,99</span>
-            <button class="add-btn" onclick="addItem('Bisteca bovina com vinagrete, farofa e macaxeira cozida', 29.99)">Adicionar</button>
-        </div>
-    </div>
-
+    <div class="item"><span class="nome">Coxinhas de frango (8 unidades)</span><span class="preco">R$ 11,99</span><td><button class="add-btn" onclick="addItem('Coxinhas de frango (8 unidades)', 11.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Pastéis de carne de sol (6 unidades)</span><span class="preco">R$ 19,99</span><td><button class="add-btn" onclick="addItem('Pastéis de carne de sol (6 unidades)', 19.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Pastéis de queijo do reino (6 unidades)</span><span class="preco">R$ 19,99</span><td><button class="add-btn" onclick="addItem('Pastéis de queijo do reino (6 unidades)', 19.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Bolinhos de bacalhau (6 unidades)</span><span class="preco">R$ 19,90</span><td><button class="add-btn" onclick="addItem('Bolinhos de bacalhau (6 unidades)', 19.90)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Pão de alho (unidade)</span><span class="preco">R$ 4,99</span><td><button class="add-btn" onclick="addItem('Pão de alho (unidade)', 4.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Frango à passarinho com molho especial</span><span class="preco">R$ 19,99</span><td><button class="add-btn" onclick="addItem('Frango à passarinho com molho especial', 19.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Torresmo com farofa</span><span class="preco">R$ 19,99</span><td><button class="add-btn" onclick="addItem('Torresmo com farofa', 19.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Tripa com farofa</span><span class="preco">R$ 19,99</span><td><button class="add-btn" onclick="addItem('Tripa com farofa', 19.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Camarão crocante com catupiry (6 unidades)</span><span class="preco">R$ 24,99</span><td><button class="add-btn" onclick="addItem('Camarão crocante com catupiry (6 unidades)', 24.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Queijo coalho na chapa</span><span class="preco">R$ 9,99</span><td><button class="add-btn" onclick="addItem('Queijo coalho na chapa', 9.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Cubinhos de queijo à milanesa com molho especial</span><span class="preco">R$ 17,99</span><td><button class="add-btn" onclick="addItem('Cubinhos de queijo à milanesa com molho especial', 17.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Macaxeira frita com molho especial</span><span class="preco">R$ 14,99</span><td><button class="add-btn" onclick="addItem('Macaxeira frita com molho especial', 14.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Batata frita</span><span class="preco">R$ 19,99</span><td><button class="add-btn" onclick="addItem('Batata frita', 19.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Batata frita com cheddar e queijo ralado</span><span class="preco">R$ 19,99</span><td><button class="add-btn" onclick="addItem('Batata frita com cheddar e queijo ralado', 19.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Batata frita com bacon, cheddar e queijo ralado</span><span class="preco">R$ 24,99</span><td><button class="add-btn" onclick="addItem('Batata frita com bacon e queijo ralado', 24.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Filé com fritas com cheddar e queijo ralado</span><span class="preco">R$ 29,99</span><td><button class="add-btn" onclick="addItem('Filé com fritas com cheddar e queijo ralado', 29.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Calabresa com fritas com molho especial e queijo ralado</span><span class="preco">R$ 24,99</span><td><button class="add-btn" onclick="addItem('Calabresa com fritas com molho especial e queijo ralado', 24.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Iscas de frango com fritas com cheddar e queijo ralado</span><span class="preco">R$ 27,99</span><td><button class="add-btn" onclick="addItem('Iscas de frango com fritas com cheddar e queijo ralado', 27.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Iscas de peixe com fritas com cheddar e queijo ralado</span><span class="preco">R$ 22,99</span><td><button class="add-btn" onclick="addItem('Iscas de peixe com fritas com cheddar e queijo ralado', 22.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Camarão com fritas ao alho e óleo e queijo ralado</span><span class="preco">R$ 29,99</span><td><button class="add-btn" onclick="addItem('Camarão com fritas ao alho e óleo e queijo ralado', 29.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Carré suíno com vinagrete, farofa e macaxeira cozida</span><span class="preco">R$ 24,99</span><td><button class="add-btn" onclick="addItem('Carré suíno com vinagrete, farofa e macaxeira cozida', 24.99)">Adicionar</button></td></div>
+    <div class="item"><span class="nome">Bisteca bovina com vinagrete, farofa e macaxeira cozida</span><span class="preco">R$ 29,99</span><td><button class="add-btn" onclick="addItem('Bisteca bovina com vinagrete, farofa e macaxeira cozida', 29.99)">Adicionar</button></td></div>
 </section>
-
 <div id="carrinho">
     <h3>Seu Pedido</h3>
+
     <ul id="listaCarrinho"></ul>
+
     <p><strong>Total: R$ <span id="totalPedido">0.00</span></strong></p>
-    <button onclick="enviarWhatsApp()">Enviar para o WhatsApp</button>
+
+    <label for="nomeCliente">Seu Nome:</label>
+    <input id="nomeCliente" type="text" 
+           style="width: 100%; padding: 6px; margin-bottom: 10px; border-radius: 5px;">
+
+    <label for="enderecoCliente">Endereço:</label>
+    <input id="enderecoCliente" type="text" 
+           style="width: 100%; padding: 6px; margin-bottom: 15px; border-radius: 5px;">
+
+    <button onclick="enviarWhatsApp()" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 6px;">
+        Enviar para WhatsApp
+    </button>
 </div>
 
 <script>
@@ -331,46 +214,72 @@ function addItem(nome, preco) {
     atualizarCarrinho();
 }
 
-function removerItem(index) {
-    total -= carrinho[index].preco;
-    carrinho.splice(index, 1);
-    atualizarCarrinho();
-}
-
 function atualizarCarrinho() {
     let lista = document.getElementById('listaCarrinho');
     lista.innerHTML = '';
 
     carrinho.forEach((item, index) => {
         let li = document.createElement('li');
-        li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
-
-        let btn = document.createElement('button');
-        btn.textContent = "X";
-        btn.className = "remove-btn";
-        btn.onclick = () => removerItem(index);
-
-        li.appendChild(btn);
+        li.innerHTML = `
+            ${item.nome} - R$ ${item.preco.toFixed(2)}
+            <button class="remover-btn" onclick="removerItem(${index})">X</button>
+        `;
         lista.appendChild(li);
     });
 
     document.getElementById('totalPedido').innerText = total.toFixed(2);
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    localStorage.setItem("total", total);
+}
+
+function removerItem(index) {
+    total -= carrinho[index].preco;
+    carrinho.splice(index, 1);
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    localStorage.setItem("total", total);
+
+    atualizarCarrinho();
 }
 
 function enviarWhatsApp() {
-    let mensagem = "Olá! Gostaria de fazer um pedido:%0A%0A";
+    const nome = document.getElementById("nomeCliente").value.trim();
+    const endereco = document.getElementById("enderecoCliente").value.trim();
+
+    if (!nome || !endereco) {
+        alert("Por favor, preencha seu nome e endereço antes de enviar o pedido.");
+        return;
+    }
+
+    let msg = " Olá, Gostaria de fazer um pedido: %0A%0A";
+
+    msg += ` *Nome:* ${nome}%0A`;
+    msg += ` *Endereço:* ${endereco}%0A%0A`;
+    msg += " *Itens do pedido:* %0A";
 
     carrinho.forEach(item => {
-        mensagem += `• ${item.nome} - R$ ${item.preco.toFixed(2)}%0A`;
+        msg += `• ${item.nome} - R$ ${item.preco.toFixed(2)}%0A`;
     });
 
-    mensagem += `%0ATotal: R$ ${total.toFixed(2)}%0A`;
+    msg += `%0A *Total:* R$ ${total.toFixed(2)}%0A`;
 
-    let telefone = "5583999998739";
-    let url = `https://wa.me/${telefone}?text=${mensagem}`;
+    const telefone = "5583993111129";
+    const url = `https://wa.me/${telefone}?text=${msg}`;
 
     window.open(url);
 }
+
+window.onload = function() {
+    const salvo = localStorage.getItem("carrinho");
+    const totalSalvo = localStorage.getItem("total");
+
+    if (salvo) {
+        carrinho = JSON.parse(salvo);
+        total = parseFloat(totalSalvo);
+        atualizarCarrinho();
+    }
+};
 </script>
 
 </body>

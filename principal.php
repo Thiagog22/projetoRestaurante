@@ -270,13 +270,6 @@
 </header>
 
 <!-- BANNER -->
-<section class="banner">
-    <div class="banner-text">
-        <h2>Sua noite começa aqui</h2>
-        <p>Drinks exclusivos, ambiente aconchegante e experiências únicas.</p>
-        <a href="https://www.canva.com/design/DAGL6NAY8SQ/-68J24QOyltwWmnawULcTA/view?utm_content=DAGL6NAY8SQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h61da0a3c28&utm_id=1344207247310791_v2_s01_e100"  
-        class="btn">Ver cardápio</a>
-    </div>
 </section>
 
 <!-- SOBRE -->
@@ -289,7 +282,7 @@
 
 <!-- FAVORITOS -->
 <section>
-    <h2>Temos</h2>
+    <h2>Faça seu pedido</h2>
 
     <div class="carrossel-container">
         <button class="seta esquerda" onclick="scrollCarrossel(-300)">&#10094;</button>
@@ -298,28 +291,28 @@
        <div class="carrossel" id="carrossel">
 
     <a href="hamburguer.php" class="card" 
-       style="background-image:url('https://manualdohomemmoderno.com.br/files/2020/05/como-fazer-o-melhor-hamburguer-caseiro-como-escolher-as-carnes-e-2-receitas-simples-e-praticas-como-fazer-o-melhor-hamburguer-caseiro-como-escolher-as-carnes-e-2-receitas-simples-e-praticas-4.jpg');">
+       style="background-image:url('https://static.itdg.com.br/images/auto-auto/6a173180b197546dc7937ede8f1c0a12/shutterstock-1710468256.jpg');">
         <h3>Hambúrgueres</h3>
     </a>
 
     <a href="pizzas.php" class="card" 
-       style="background-image:url('https://swiftbr.vteximg.com.br/arquivos/ids/207860-1500-1000/618296-pizza-artesanal-de-pepperon_rec.jpg?v=638851846024500000');">
+       style="background-image:url('https://wallpapers.com/images/hd/pizza-pictures-bfwkt0ti6ej1wus4.jpg');">
         <h3>Pizza</h3>
     </a>
 
     <a href="petiscos.php" class="card" 
-       style="background-image:url('https://www.receiteria.com.br/wp-content/uploads/receitas-de-petiscos-para-festa-1.jpg');">
+       style="background-image:url('https://www.receiteria.com.br/wp-content/uploads/receitas-de-petiscos-de-boteco-4.jpg');">
         <h3>Petiscos</h3>
     </a>
 
     <a href="bebidas.php" class="card" 
        style="background-image:url('https://rezenha.ze.delivery/wp-content/uploads/2025/02/drinks-com-energetico.webp');">
-        <h3>Drinks</h3>
+        <h3>Bebidas</h3>
     </a>
 
-    <a href="cerveja.php" class="card" 
-       style="background-image:url('https://arquivoscloud.blob.core.windows.net/pontobrweb/7fe39c89-9cef-4154-bef8-17e266a6d8d5.PNG');">
-        <h3>Cerveja</h3>
+    <a href="pratos.php" class="card" 
+       style="background-image:url('https://www.elhombre.com.br/wp-content/uploads/2023/03/Classic-Lasagna-14-scaled-1-1400x841.jpg');">
+        <h3>Pratos</h3>
     </a>
 
 </div>
@@ -335,11 +328,12 @@
         <button class="foto-arrow foto-left" onclick="scrollFotos(-300)">&#10094;</button>
 
         <div class="fotos-carousel" id="carousel-fotos">
-            <div class="foto-card" style="background-image:url('img/frente.jpg');"></div>
-            <div class="foto-card" style="background-image:url('img/letreiro.jpg');"></div>
             <div class="foto-card" style="background-image:url('img/bar.jpg');"></div>
-            <div class="foto-card" style="background-image:url('img/frente2.jpg');"></div>
-            <div class="foto-card" style="background-image:url('img/letreiro2.jpg');"></div>
+            <div class="foto-card" style="background-image:url('img/letreiro.jpg');"></div>
+            <div class="foto-card" style="background-image:url('img/drinks.jpg');"></div>
+            <div class="foto-card" style="background-image:url('img/frente.jpg');"></div>
+            <div class="foto-card" style="background-image:url('img/hamburguer.jpg');"></div>
+            <div class="foto-card" style="background-image:url('img/logogastrobar.jpg');"></div>
         </div>
 
         <button class="foto-arrow foto-right" onclick="scrollFotos(300)">&#10095;</button>
@@ -447,4 +441,3 @@ animateParticles();
 
 </body>
 </html>
-

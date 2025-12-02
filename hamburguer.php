@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -18,24 +18,10 @@
         text-align: center;
         padding: 40px 0 10px;
     }
+
     header h1 {
         font-size: 48px;
         letter-spacing: 3px;
-    }
-    .btn-voltar {
-        position: absolute;
-        left: 20px;
-        top: 20px;
-        background: #ffb300;
-        padding: 10px 15px;
-        border-radius: 5px;
-        color: #000;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .btn-voltar:hover {
-        background: #ffcc46;
     }
 
     .categoria {
@@ -103,16 +89,55 @@
         border-radius: 10px;
         color: #fff;
     }
+    .remover-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 2px 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 8px;
+    font-weight: bold;
+}
 
-    #listaCarrinho button {
-        background: red;
-        border: none;
-        color: #fff;
-        padding: 3px 7px;
-        margin-left: 8px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+.remover-btn:hover {
+    background: darkred;
+}
+
+    .btn-voltar {
+
+position: absolute;
+
+left: 20px;
+
+top: 20px;
+
+background: #ffb300;
+
+padding: 10px 15px;
+
+border-radius: 5px;
+
+color: #000;
+
+text-decoration: none;
+
+font-weight: bold;
+
+}
+
+.btn-voltar:hover {
+
+background: #ffcc46;
+
+header h1 {
+
+font-size: 48px;
+
+letter-spacing: 3px;
+}
+}
+
 </style>
 </head>
 
@@ -122,10 +147,11 @@
     <h1>HAMBÚRGUERES</h1>
 </header>
 
+<a href="javascript:history.back()" class="btn-voltar">< Voltar</a>
+
 <!-- INDIVIDUAIS -->
 <section class="categoria">
     <h2>Individuais</h2>
-    <a href="javascript:history.back()" class="btn-voltar">← Voltar</a>
 
     <div class="item">
         <div class="nome">Smash Muçarela</div>
@@ -320,9 +346,22 @@
 <!-- CARRINHO -->
 <div id="carrinho">
     <h3>Seu Pedido</h3>
+
     <ul id="listaCarrinho"></ul>
+
     <p><strong>Total: R$ <span id="totalPedido">0.00</span></strong></p>
-    <button onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
+
+    <label for="nomeCliente">Seu Nome:</label>
+    <input id="nomeCliente" type="text" 
+           style="width: 100%; padding: 6px; margin-bottom: 10px; border-radius: 5px;">
+
+    <label for="enderecoCliente">Endereço:</label>
+    <input id="enderecoCliente" type="text" 
+           style="width: 100%; padding: 6px; margin-bottom: 15px; border-radius: 5px;">
+
+    <button onclick="enviarWhatsApp()" style="width: 100%; padding: 10px; margin-top: 5px; border-radius: 6px;">
+        Enviar para WhatsApp
+    </button>
 </div>
 
 <script>
@@ -335,45 +374,74 @@ function addItem(nome, preco) {
     atualizarCarrinho();
 }
 
-function removerItem(index) {
-    total -= carrinho[index].preco;
-    carrinho.splice(index, 1);
-    atualizarCarrinho();
-}
-
 function atualizarCarrinho() {
-    const lista = document.getElementById("listaCarrinho");
-    lista.innerHTML = "";
+    let lista = document.getElementById('listaCarrinho');
+    lista.innerHTML = '';
 
     carrinho.forEach((item, index) => {
-        const li = document.createElement("li");
-
+        let li = document.createElement('li');
         li.innerHTML = `
             ${item.nome} - R$ ${item.preco.toFixed(2)}
-            <button onclick="removerItem(${index})">X</button>
+            <button class="remover-btn" onclick="removerItem(${index})">X</button>
         `;
-
         lista.appendChild(li);
     });
 
-    document.getElementById("totalPedido").innerText = total.toFixed(2);
+    document.getElementById('totalPedido').innerText = total.toFixed(2);
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    localStorage.setItem("total", total);
+}
+
+function removerItem(index) {
+    total -= carrinho[index].preco;
+    carrinho.splice(index, 1);
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    localStorage.setItem("total", total);
+
+    atualizarCarrinho();
 }
 
 function enviarWhatsApp() {
-    let msg = "Olá! Gostaria de fazer um pedido:%0A%0A";
+    const nome = document.getElementById("nomeCliente").value.trim();
+    const endereco = document.getElementById("enderecoCliente").value.trim();
+
+    if (!nome || !endereco) {
+        alert("Por favor, preencha seu nome e endereço antes de enviar o pedido.");
+        return;
+    }
+
+    let msg = " Olá, Gostaria de fazer um pedido: %0A%0A";
+
+    msg += ` *Nome:* ${nome}%0A`;
+    msg += ` *Endereço:* ${endereco}%0A%0A`;
+    msg += " *Itens do pedido:* %0A";
 
     carrinho.forEach(item => {
         msg += `• ${item.nome} - R$ ${item.preco.toFixed(2)}%0A`;
     });
 
-    msg += `%0ATotal: R$ ${total.toFixed(2)}%0A`;
+    msg += `%0A *Total:* R$ ${total.toFixed(2)}%0A`;
 
-    const telefone = "5583999998739";
+    const telefone = "5583993111129";
     const url = `https://wa.me/${telefone}?text=${msg}`;
 
     window.open(url);
 }
+
+window.onload = function() {
+    const salvo = localStorage.getItem("carrinho");
+    const totalSalvo = localStorage.getItem("total");
+
+    if (salvo) {
+        carrinho = JSON.parse(salvo);
+        total = parseFloat(totalSalvo);
+        atualizarCarrinho();
+    }
+};
 </script>
+
 
 </body>
 </html>
